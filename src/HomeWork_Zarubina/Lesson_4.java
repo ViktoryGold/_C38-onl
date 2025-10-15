@@ -11,8 +11,8 @@ public class Lesson_4 {
         //getMasDouble();
         //workArray();
         //getQuantity();
-        //changeLocation();
-        r();
+        changeLocation();
+        //r();
 
 
     }
@@ -164,12 +164,13 @@ public class Lesson_4 {
         }
         int u = numb.length-1;
         for (int index = 0; index <= u; index++){
-            int temp = numb[index];
-            numb[index] = numb[u--];
-            numb[u--] = temp;
+            int temp = numb[u];
+            numb[u] = numb[index];
+            numb[index] = temp;
+            u--;
         }
         for (int index = 0; index < numb.length; index++){
-            System.out.println(numb[index]);
+            System.out.print(numb[index]);
         }
     }
 
@@ -182,11 +183,10 @@ public class Lesson_4 {
         for (int index = 0; index <= g; index++){
             int temp = numb[g];
             numb[g] = numb[index];;
-            if (index == 0){
-                numb[index] = temp;
-            }
+            numb[index] = temp;
             g--;
         }
+        System.out.println("_".repeat(32));
         for (int index = 0; index <= numb.length; index++){
             System.out.println(numb[index]);
         }
