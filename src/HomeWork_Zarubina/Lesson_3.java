@@ -11,7 +11,7 @@ public class Lesson_3 {
         //determineTemperature();
         //getSquare();
         //getSequence();
-        getNumber();
+        //getNumber();
     }
     //Ввести в консоли любое число от 1 до 12. В зависимости от введенного числа вывести в
     //Консоль соответствующую пору года по номеру месяца. При возможности использовать switch
