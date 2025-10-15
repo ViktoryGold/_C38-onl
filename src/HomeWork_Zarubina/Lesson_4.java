@@ -11,8 +11,8 @@ public class Lesson_4 {
         //getMasDouble();
         //workArray();
         //getQuantity();
-        changeLocation();
-        //r();
+        //changeLocation();
+        getSequence();
 
 
     }
@@ -173,22 +173,39 @@ public class Lesson_4 {
             System.out.print(numb[index]);
         }
     }
-
-    public static void r(){
-        int[] numb = new int[]{2,6,8,3};
+    // Пользователь с клавиатуры вводит размер массива(простое целое число).
+    //Заполнение используя либо Math.random() либо каждый элемент массива вводится пользователем вручную.
+    //Проверить, является ли массив возрастающей последовательностью
+    //(каждое следующее число больше предыдущего)
+    public static void getSequence(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите размер массива: ");
+        int g = scanner.nextInt();
+        int[] numb = new int[g];
+        int counter = 0;
+        System.out.println("Необходимо последовательно ввести " + g + " любых положительных числа:");
+        while (counter < numb.length){
+            System.out.println("Введите число: ");
+            int x = scanner.nextInt();
+            numb[counter] = x;
+            counter++;
+        }
+        int count = 0;
+        int seq = numb.length-1;
         for (int index = 0; index < numb.length; index++){
+            if (numb[index] != numb[seq]){
+               if (numb[index] < numb[index + 1]){
+                    count++;
+               }
+            } else {
+                count++;
+            }
             System.out.println(numb[index]);
         }
-        int g = numb.length-1;
-        for (int index = 0; index <= g; index++){
-            int temp = numb[g];
-            numb[g] = numb[index];;
-            numb[index] = temp;
-            g--;
-        }
-        System.out.println("_".repeat(32));
-        for (int index = 0; index <= numb.length; index++){
-            System.out.println(numb[index]);
+        if (count == numb.length){
+            System.out.println("Массив является возрастающей последовательностью!");
+        } else {
+            System.out.println("Нет, массив не является возрастающей последовательностью");
         }
     }
 }
