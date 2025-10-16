@@ -12,8 +12,8 @@ public class Lesson_4 {
         //workArray();
         //getQuantity();
         //changeLocation();
-        getSequence();
-        //test();
+        //getSequence();
+        addToArray();
     }
     // Сгенерировать 5 случайных чисел. Каждое возвести в квадрат
     //и вывести в консоль.
@@ -231,26 +231,25 @@ public class Lesson_4 {
     //представляет целое число (Например массив {1,2,3} -> 123, {9,9,9} -> 999).
     //Задача добавить единицу к этому "числу" и на выходе получить исправленный
     // массив. Массив не содержит нуля в начале, кроме самого числа 0.
-    public static void test(){
-        //int[] gen = new int[]{1,2,3};
-        int x;
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите размер массива: ");
-        int g = scanner.nextInt();
-        int[] numb = new int[g];
-        int counter = 0;
-        System.out.println("Необходимо последовательно ввести " + g + " любых положительных числа:");
-        while (counter < numb.length){
-            System.out.println("Введите число: ");
-            if ((x = scanner.nextInt()) < 0){
-                System.out.println("Введённое число не является положительным," +
-                        " повторите ввод: ");
-                continue;
-            };
-            numb[counter] = x;
-            counter++;
+    public static void addToArray(){
+        int[] gen = new int[]{9,9,9,9};
+        System.out.println("У нас есть массив: " + Arrays.toString(gen));
+        String array = "";
+        for (int index = 0; index < gen.length; index++){
+            array = array + gen[index];
         }
-        System.out.println(Arrays.toString(numb));
-
+        int intArray = Integer.parseInt(array);
+        System.out.println("Получили число из элементов массива: " + intArray++);
+        System.out.println("Прибавили 1 = " + intArray);
+        int length = String.valueOf(intArray).length();
+        System.out.println("Длина массива в результате прибавления = " + length);
+        if (gen.length == length){
+            System.out.println("Ничего не меняем!");
+        } else {
+            System.out.println("Создали новый массив:");
+            String strArray = Integer.toString(intArray);
+            char[] strToArray = strArray.toCharArray();
+            System.out.println(Arrays.toString(strToArray));
+        }
     }
 }
