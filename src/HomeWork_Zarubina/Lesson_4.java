@@ -13,8 +13,7 @@ public class Lesson_4 {
         //getQuantity();
         //changeLocation();
         getSequence();
-
-
+        //test();
     }
     // Сгенерировать 5 случайных чисел. Каждое возвести в квадрат
     //и вывести в консоль.
@@ -91,10 +90,15 @@ public class Lesson_4 {
         int g = scanner.nextInt();
         int[] numb = new int[g];
         int counter = 0;
+        int x;
         System.out.println("Необходимо последовательно ввести " + g + " любых положительных числа:");
         while (counter < numb.length){
             System.out.println("Введите число: ");
-            int x = scanner.nextInt();
+            if ((x = scanner.nextInt()) < 0 ){
+                System.out.println("Введённое число не является положительным," +
+                        " повторите ввод: ");
+                continue;
+            };
             numb[counter] = x;
             counter++;
         }
@@ -155,23 +159,29 @@ public class Lesson_4 {
         int g = scanner.nextInt();
         int[] numb = new int[g];
         int counter = 0;
+        int x;
         System.out.println("Необходимо последовательно ввести " + g + " любых положительных числа:");
         while (counter < numb.length){
             System.out.println("Введите число: ");
-            int x = scanner.nextInt();
+            if ((x = scanner.nextInt()) < 0){
+                System.out.println("Введённое число не является положительным," +
+                        " повторите ввод: ");
+                continue;
+            };
             numb[counter] = x;
             counter++;
         }
         int u = numb.length-1;
+        System.out.println("Первоначальный порядок массива: ");
+        System.out.println(Arrays.toString(numb));
         for (int index = 0; index <= u; index++){
             int temp = numb[u];
             numb[u] = numb[index];
             numb[index] = temp;
             u--;
         }
-        for (int index = 0; index < numb.length; index++){
-            System.out.print(numb[index]);
-        }
+        System.out.println("Изменён порядок элементов массива:");
+        System.out.println(Arrays.toString(numb));
     }
     // Пользователь с клавиатуры вводит размер массива(простое целое число).
     //Заполнение используя либо Math.random() либо каждый элемент массива вводится пользователем вручную.
@@ -183,10 +193,15 @@ public class Lesson_4 {
         int g = scanner.nextInt();
         int[] numb = new int[g];
         int counter = 0;
+        int x;
         System.out.println("Необходимо последовательно ввести " + g + " любых положительных числа:");
         while (counter < numb.length){
             System.out.println("Введите число: ");
-            int x = scanner.nextInt();
+            if ((x = scanner.nextInt()) < 0){
+                System.out.println("Введённое число не является положительным," +
+                        " повторите ввод: ");
+                continue;
+            };
             numb[counter] = x;
             counter++;
         }
@@ -196,6 +211,8 @@ public class Lesson_4 {
             if (numb[index] != numb[seq]){
                if (numb[index] < numb[index + 1]){
                     count++;
+               } else {
+                   break;
                }
             } else {
                 count++;
@@ -203,9 +220,37 @@ public class Lesson_4 {
             System.out.println(numb[index]);
         }
         if (count == numb.length){
-            System.out.println("Массив является возрастающей последовательностью!");
+            System.out.println("Массив " + Arrays.toString(numb) +
+                    " является возрастающей последовательностью!");
         } else {
-            System.out.println("Нет, массив не является возрастающей последовательностью");
+            System.out.println("Нет, массив" + Arrays.toString(numb) +
+                    " не является возрастающей последовательностью");
         }
+    }
+    // * Имеется массив из неотрицательных чисел(любой). Представьте что массив
+    //представляет целое число (Например массив {1,2,3} -> 123, {9,9,9} -> 999).
+    //Задача добавить единицу к этому "числу" и на выходе получить исправленный
+    // массив. Массив не содержит нуля в начале, кроме самого числа 0.
+    public static void test(){
+        //int[] gen = new int[]{1,2,3};
+        int x;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите размер массива: ");
+        int g = scanner.nextInt();
+        int[] numb = new int[g];
+        int counter = 0;
+        System.out.println("Необходимо последовательно ввести " + g + " любых положительных числа:");
+        while (counter < numb.length){
+            System.out.println("Введите число: ");
+            if ((x = scanner.nextInt()) < 0){
+                System.out.println("Введённое число не является положительным," +
+                        " повторите ввод: ");
+                continue;
+            };
+            numb[counter] = x;
+            counter++;
+        }
+        System.out.println(Arrays.toString(numb));
+
     }
 }
