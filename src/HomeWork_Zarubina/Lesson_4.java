@@ -13,7 +13,7 @@ public class Lesson_4 {
         //getQuantity();
         //changeLocation();
         //getSequence();
-        addToArray();
+        //addToArray();
     }
     // Сгенерировать 5 случайных чисел. Каждое возвести в квадрат
     //и вывести в консоль.
