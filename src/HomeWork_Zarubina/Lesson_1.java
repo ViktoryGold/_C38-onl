@@ -3,15 +3,15 @@ package HomeWork_Zarubina;
 public class Lesson_1{
     public static void main(String[] args){
         System.out.println("Привет, мир!");
-        createInitials();
-        getAge();
-        calculationValue();
-        getSum();
-        getNum();
-        getRound();
-        getDevision();
-        changeVariables();
-        difficultReplacement();
+        //createInitials();
+        //getAge();
+        //calculationValue();
+        //getSum();
+        //getNum();
+        //getRound();
+        //getDevision();
+        //changeVariables();
+        //difficultReplacement();
     }
     public static void createInitials(){
         String name = "Виктория";

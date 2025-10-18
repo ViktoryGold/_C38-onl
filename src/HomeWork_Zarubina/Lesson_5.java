@@ -6,12 +6,13 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Lesson_5 {
-    public static void main(String[] args) {
+    public static void main(String[] args){
         //fillArray();
         //getArrayTooth();
         //getDiagonal();
-        getMultidimensionalArray();
-
+        //getMultidimensionalArray();
+        //getChessboard();
+        //getSnake();
     }
     // Создайте двумерный массив и заполните его псевдослучайными числами
     //с помощью класса Random.
@@ -104,5 +105,60 @@ public class Lesson_5 {
             System.out.println();
         }
         System.out.println(Arrays.deepToString(multiArray));
+    }
+    // Создать программу для раскладки шахматной доски с помощью цикла.
+    //Создать двумерный массив String 8x8. С помощью циклов задать элементам
+    //массива значения B(Black) или W(White).
+    public static void getChessboard(){
+        String[][] ches = new String[8][8];
+        String W = new String();
+        String B = new String();
+        for (int row = 0; row <= ches.length-1; row++){
+            for (int col = 0; col <= ches[row].length-1; col++){
+                if (row%2 != 0 && col%2 != 0 || row%2 == 0 && col%2 == 0){
+                    ches[row][col] = "W";
+                }
+                if (row%2 != 0 && col%2 == 0 || row%2 == 0 && col%2 != 0){
+                    ches[row][col] = "B";
+                }
+            }
+        }
+        System.out.println(Arrays.deepToString(ches));
+        for (int row = 0; row <= ches.length-1; row++) {
+            for (int col = 0; col <= ches[row].length - 1; col++) {
+                System.out.print(ches[col][row] + "\t");
+            }
+            System.out.println();
+        }
+    }
+    // * Даны числа n и m. Создайте массив A[n][m] и заполните его змейкой.
+    //Программа получает на вход два числа n и m.
+    //Программа должна вывести полученный массив, отводя на вывод каждого числа ровно 3 символа.
+    public static void getSnake(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите первое число: ");
+        int n = scanner.nextInt();
+        long sum = 1;
+        System.out.println("Введите второе число: ");
+        int m = scanner.nextInt();
+        int[][] snake = new int[n][m];
+        for (int row = 0; row <= snake.length-1; row++){
+            for (int col = 0; col <= snake[row].length-1; col++){
+                snake[row][col] = 0;
+            }
+        }
+        for (int row = 0; row <= snake.length-1; row++) {
+            for (int col = 0; col <= snake.length - 1; col++) {
+                int i = row + 1;
+                int y = col + 1;
+                snake[row][col] = ((i - 1) * n + y) * (i%2) + (i * n + 1 - y) * ((i + 1)%2);
+            }
+        }
+        for (int row = 0; row <= snake.length-1; row++) {
+            for (int col = 0; col <= snake.length - 1; col++) {
+                System.out.print(snake[col][row] + "\t");
+            }
+            System.out.println();
+        }
     }
 }

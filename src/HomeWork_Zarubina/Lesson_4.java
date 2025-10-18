@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Lesson_4 {
-    public static void main(String[] args) {
+    public static void main(String[] args){
         //getRandomNum();
         //getArray();
         //getMasDouble();
