@@ -10,6 +10,7 @@ public class Lesson_5 {
         //fillArray();
         //getArrayTooth();
         //getDiagonal();
+        getMultidimensionalArray();
 
     }
     // Создайте двумерный массив и заполните его псевдослучайными числами
@@ -82,5 +83,26 @@ public class Lesson_5 {
         System.out.println("Сумма элементов побочной диагонали = " + sum);
         System.out.print("\n");
         System.out.println(Arrays.deepToString(array));
+    }
+    // Создать двумерный массив, заполнить его случайными числами.
+    //Добавить к каждому значению число, которое пользователь будет вводить с консоли.
+    //Найти сумму всех получившихся элементов и вывести в консоль.
+    public static void getMultidimensionalArray(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите любое число: ");
+        int x = scanner.nextInt();
+        Random random = new Random();
+        long sum = 0;
+        int[][] multiArray = new int[3][2];
+        for (int row = 0; row <= multiArray.length-1; row++){
+            for (int col = 0; col <= multiArray[row].length-1; col++){
+                System.out.print(multiArray[row][col] = random.nextInt(100));
+                System.out.print(col + "\t");
+                System.out.println(" = " + (multiArray[row][col] += x));
+                System.out.println("Сумма: " + (sum += multiArray[row][col]));
+            }
+            System.out.println();
+        }
+        System.out.println(Arrays.deepToString(multiArray));
     }
 }
