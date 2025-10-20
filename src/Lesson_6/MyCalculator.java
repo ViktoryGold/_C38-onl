@@ -2,7 +2,7 @@ package Lesson_6;
 
 public class MyCalculator {
     public static void main(String[] args){
-        createCalculator();
+        //createCalculator();
 
     }
     public static void createCalculator(){

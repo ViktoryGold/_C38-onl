@@ -31,7 +31,7 @@ public class Calculator {
     }
 
     public void getInform(){
-        System.out.println("Calculator data is");
+        System.out.println("A calculator object is created:");
         System.out.println("\tweight: " + weight);
         System.out.println("\tcost: " + cost);
         System.out.println("\tcolor: " + color);
