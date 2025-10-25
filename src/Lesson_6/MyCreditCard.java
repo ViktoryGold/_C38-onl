@@ -2,32 +2,28 @@ package Lesson_6;
 
 public class MyCreditCard {
     public static void main(String[] args){
-        createCreditCard();
-
+        //createCreditCard();
     }
     public static void createCreditCard(){
-        CreditCard sber = new CreditCard();
+        CreditCard saber = new CreditCard();
+        saber.setVar("BY566890975432",450_000);
 
-        sber.accountNumber = "BY566890975432";
-        sber.currentAmount = 450_000;
-
-        CreditCard yral = new CreditCard();
-
-        yral.accountNumber = "BY567543224032";
-        yral.currentAmount = 200_000;
+        CreditCard oral = new CreditCard();
+        oral.setVar("BY567543224032",200_000);
 
         CreditCard vtb = new CreditCard();
+        vtb.setVar("BY761290975987",1_000_000);
 
-        vtb.accountNumber = "BY761290975987";
-        vtb.currentAmount =1_000_000;
+        saber.getCalculateAmount(39);
+        System.out.println(saber);
 
-        sber.calculateAmount(39);
-        sber.currentInformation();
+        oral.getCalculateAmount(450_000);
+        System.out.println(oral);
 
-        yral.calculateAmount(450_000);
-        yral.currentInformation();
-
-        vtb.withdrawAmount(555_000);
-        vtb.currentInformation();
+        vtb.getWithdrawAmount(555_000);
+        System.out.println(vtb);
     }
 }
+
+
+

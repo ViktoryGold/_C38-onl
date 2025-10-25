@@ -1,14 +1,34 @@
 package Lesson_6;
 
 public class Calculator {
-    public double weight;
-    public int cost;
-    public String color;
-    public int sum;
-    public int minus;
-    public double division;
-    public int multiplication;
+    private double weight;
+    private int cost;
+    private String color;
+    private int sum;
+    private int minus;
+    private double division;
+    private int multiplication;
 
+    public Calculator(){
+    }
+
+    public Calculator(double weight, int cost, String color){
+        this.weight = weight;
+        this.cost = cost;
+        this.color = color;
+    }
+
+    public void setVar(double w, int c, String col){
+        weight = w;
+        cost = c;
+        color = col;
+    }
+   @Override public String toString(){
+        return "A calculator object is created: \n" +
+                "\tweight: " + weight + "\n" +
+                "\tcost: " + cost + "\n" +
+                "\tcolor: " + color;
+   }
     public void getSum(int firstNumber, int secondNumber){
         sum = firstNumber + secondNumber;
         System.out.println("Result is: ");
@@ -29,11 +49,6 @@ public class Calculator {
         System.out.println("Result is: ");
         System.out.println(firstNumber + " * " + secondNumber + " = " + multiplication);
     }
-
-    public void getInform(){
-        System.out.println("A calculator object is created:");
-        System.out.println("\tweight: " + weight);
-        System.out.println("\tcost: " + cost);
-        System.out.println("\tcolor: " + color);
-    }
 }
+
+

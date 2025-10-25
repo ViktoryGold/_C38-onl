@@ -7,11 +7,15 @@ public class MyPerson {
     }
     public static void createPerson(){
         Person marina = new Person();
-
-        marina.fullName = "Абрамова Марина Алексеевна";
-        marina.age = 27;
-
-        marina.talk(" talk");
         marina.move();
+        marina.talk("привет!");
+
+        Person oleg = new Person("Романов Олег Владимирович",42);
+
+        oleg.talk(" привет!");
+        oleg.move();
+
+
+
     }
 }

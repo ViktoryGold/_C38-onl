@@ -1,21 +1,29 @@
 package Lesson_6;
 
 public class CreditCard {
-    public String accountNumber;
-    public double currentAmount;
+    private String accountNumber;
+    private double currentAmount;
 
-    public void calculateAmount(double money){
-        currentAmount += money;
-        System.out.println("На ваш счёт поступила сумма " + money);
+    public void setVar(String accNum, double curAm){
+        accountNumber = accNum;
+        currentAmount = curAm;
+    }
+    public CreditCard(){
 
     }
-    public void withdrawAmount(double money){
+
+    public  void getCalculateAmount(double money){
+        currentAmount += money;
+        System.out.println("На ваш счёт поступило " + money);
+    }
+
+    public void getWithdrawAmount(double money){
         currentAmount -= money;
         System.out.println("С вашего счёта списали " + money);
-
     }
-    public void currentInformation(){
-        System.out.println("На вашем счету " + currentAmount);
 
+    @Override public String toString(){
+        return "На вашем счету " + accountNumber +
+                " - " + currentAmount;
     }
 }

@@ -7,12 +7,11 @@ public class MyCalculator {
     }
     public static void createCalculator(){
         Calculator asus = new Calculator();
+        asus.setVar(128,4500,"Blue");
+        Calculator lenovo = new Calculator(234,5640,"Black");
 
-        asus.weight = 123.03;
-        asus.cost = 2600;
-        asus.color = "blue";
-
-        asus.getInform();
+        System.out.println(asus);
+        System.out.println(lenovo);
 
         System.out.println("-".repeat(55));
 
