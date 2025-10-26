@@ -67,14 +67,17 @@ public class ATM {
                                 System.out.println("банкнот номиналом 20: " + banknote_20/20);
                                 banknote_20 = 0;
                             } else {
-                                a *= 20;
-                                d = banknote_20;
-                                d -= money;
-                                money = d;
-                                banknote_20 -= a;
-                                bankAccount -= a;
-                                cr = banknote_20;
-                                System.out.println("банкнот номиналом 20: " + banknote_20/20);
+                                int index = 0;
+                                d = banknote_20/20;
+                                while ((d > 0) && (money > 19)){
+                                    banknote_20 = banknote_20 - 20;
+                                    money -= 20;
+                                    index++;
+                                    d--;
+                                }
+                                cr = index * 20;
+                                bankAccount -= cr;
+                                System.out.println("банкнот номиналом 20: " + index);
                             }
                         }
                     } else {
