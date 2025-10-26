@@ -117,14 +117,17 @@ public class ATM {
                     }
                 }
             } else {
-                c *= 100;
-                d = banknote_100;
-                d -= money;
-                money = d;
-                banknote_100 -= c;
-                bankAccount -= c;
-                ar = banknote_100;
-                System.out.println("банкнот номиналом 100: " + banknote_100/100);
+                int index = 0;
+                d = banknote_100/100;
+                while ((c > 0) && (money > 99)){
+                    banknote_100 = banknote_100 - 100;
+                    money -= 100;
+                    index++;
+                    d--;
+                }
+                ar = index * 100;
+                bankAccount -= ar;
+                System.out.println("банкнот номиналом 100: " + index);
                 if (money > 0){
                     b = (int) money / 50;
                     if ((b * 50) >= banknote_50){
@@ -142,25 +145,53 @@ public class ATM {
                                 System.out.println("банкнот номиналом 20: " + banknote_20/20);
                                 banknote_20 = 0;
                             } else {
-                                a *= 20;
-                                d = banknote_20;
-                                d -= money;
-                                money = d;
-                                banknote_20 -= a;
-                                bankAccount -= a;
-                                cr = banknote_20;
-                                System.out.println("банкнот номиналом 20: " + banknote_20/20);
+                                int index = 0;
+                                d = banknote_20/20;
+                                while ((d > 0) && (money > 19)){
+                                    banknote_20 = banknote_20 - 20;
+                                    money -= 20;
+                                    index++;
+                                    d--;
+                                }
+                                cr = index * 20;
+                                bankAccount -= cr;
+                                System.out.println("банкнот номиналом 20: " + index);
                             }
                         }
                     } else {
-                        b *= 50;
-                        d = banknote_50;
-                        d -= money;
-                        money = d;
-                        banknote_50 -= b;
-                        bankAccount -= b;
-                        br = banknote_50;
-                        System.out.println("банкнот номиналом 50: " + banknote_50/50);
+                        int index = 0;
+                        d = banknote_50/50;
+                        while ((d > 0) && (money > 49)){
+                            banknote_50 = banknote_50 - 50;
+                            money -= 50;
+                            index++;
+                            d--;
+                        }
+                        br = index * 50;
+                        bankAccount -= br;
+                        System.out.println("банкнот номиналом 50: " + index);
+                        if (money > 0) {
+                            a = (int) money / 20;
+                            if ((a * 20) >= banknote_20) {
+                                money -= banknote_20;
+                                bankAccount -= banknote_20;
+                                cr = banknote_20;
+                                System.out.println("банкнот номиналом 20: " + banknote_20/20);
+                                banknote_20 = 0;
+                            } else {
+                                index = 0;
+                                d = banknote_20/20;
+                                while ((d > 0) && (money > 19)){
+                                    banknote_20 = banknote_20 - 20;
+                                    money -= 20;
+                                    index++;
+                                    d--;
+                                }
+                                cr = index * 20;
+                                bankAccount -= cr;
+                                System.out.println("банкнот номиналом 20: " + index);
+                            }
+                        }
                     }
                 }
             }

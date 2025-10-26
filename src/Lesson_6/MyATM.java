@@ -5,9 +5,9 @@ public class MyATM {
         createATM();
     }
     public static void createATM(){
-        ATM vega = new ATM(0,6,3);
-        vega.addMoney(2,0,2);
-        vega.minusMoney(630);
+        ATM vega = new ATM(0,0,3);
+        vega.addMoney(0,0,2);
+        vega.minusMoney(430);
         System.out.println();
 
     }
