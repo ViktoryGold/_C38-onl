@@ -145,7 +145,7 @@ public class ATM {
                                 System.out.println("банкнот номиналом 20: " + banknote_20/20);
                                 banknote_20 = 0;
                             } else {
-                                int index = 0;
+                                index = 0;
                                 d = banknote_20/20;
                                 while ((d > 0) && (money > 19)){
                                     banknote_20 = banknote_20 - 20;
@@ -159,7 +159,7 @@ public class ATM {
                             }
                         }
                     } else {
-                        int index = 0;
+                        index = 0;
                         d = banknote_50/50;
                         while ((d > 0) && (money > 49)){
                             banknote_50 = banknote_50 - 50;
