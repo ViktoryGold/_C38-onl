@@ -2,12 +2,12 @@ package Lesson_6;
 
 public class MyATM {
     public static void main(String[] args){
-        createATM();
+        //createATM();
     }
     public static void createATM(){
-        ATM vega = new ATM(1,0,3);
-        vega.addMoney(0,0,2);
-        vega.minusMoney(430);
+        ATM vega = new ATM(10,2,3);
+        vega.addMoney(1,1,1);
+        vega.minusMoney(750);
         System.out.println();
 
     }
