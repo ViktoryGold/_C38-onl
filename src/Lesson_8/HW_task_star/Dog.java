@@ -10,4 +10,8 @@ public class Dog extends Animal{
         this();
         this.name = name;
     }
+
+    public String getName() {
+        return name;
+    }
 }
