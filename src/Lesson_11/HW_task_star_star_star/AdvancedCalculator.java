@@ -20,7 +20,7 @@ public class AdvancedCalculator {
 
     private static double calculate(String expr) throws Exception {
         expr = expr.replaceAll("\\s+", "");
-        return parseExpression(new StringTokenizer(expr, "+-*/()", true));
+        return parseExpression(new StringTokenizer(expr, "+-*/%()", true));
     }
     private static double parseExpression(StringTokenizer tokens) throws Exception {
         Stack<Double> values = new Stack<>();
@@ -72,6 +72,8 @@ public class AdvancedCalculator {
                 if (b == 0) throw new Exception("Деление на ноль");
                 values.push(a / b);
                 break;
+            case '%': values.push((b * a) / 100);
+                break;
             default: throw new Exception("Неизвестная операция: " + op);
         }
     }
@@ -84,12 +86,12 @@ public class AdvancedCalculator {
         }
     }
     private static boolean isOperator(String s) {
-        return s.length() == 1 && "+-*/".indexOf(s.charAt(0)) != -1;
+        return s.length() == 1 && "+-*/%".indexOf(s.charAt(0)) != -1;
     }
     private static boolean hasPrecedence(char op1, char op2) {
         if (op2 == '(') {
             return false;
         }
-        return (op1 != '*' && op1 != '/') || (op2 != '+' && op2 != '-');
+        return (op1 != '*' && op1 != '/' && op1 != '%') || (op2 != '+' && op2 != '-');
     }
 }
