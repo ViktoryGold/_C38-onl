@@ -20,12 +20,12 @@ public class Program {
             i++;
         } else if (uniqueChars(str2)) {
             result = str2;
-            i++;
+            i += 2;
         } else if (uniqueChars(str3)) {
             result = str3;
-            i++;
+            i += 3;
         }
-        System.out.println("Слово - " + result.toUpperCase(Locale.ROOT) + " под номером " + i + "является первым из трёх " +
+        System.out.println("Слово - " + result.toUpperCase(Locale.ROOT) + " под номером " + i + " является первым из трёх " +
                 "состоящим из различных символов");
     }
     private static boolean uniqueChars(String s) {
