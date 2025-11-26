@@ -11,9 +11,8 @@ public class Program {
     }
     public static void outputAbbreviations() {
         System.out.println("Введите пожалуйста текст: ");
-        String y = new String(getInput().nextLine());
-        Pattern pattern = Pattern.compile("([А-Я]\\.){2,6}|[А-Я]{2,6}|" +
-                "([A-Z]\\.){2,6}|[A-Z]{2,6}");
+        String y = getInput().nextLine();
+        Pattern pattern = Pattern.compile("(\\b[A-ZА-Я]{2,5}\\b)", Pattern.UNICODE_CHARACTER_CLASS);
         Matcher matcher = pattern.matcher(y);
         while (matcher.find()) {
             System.out.println(matcher.group());
