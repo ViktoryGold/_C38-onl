@@ -1,0 +1,8 @@
+Ошибка: java.lang.ArithmeticException: / by zero
+Ошибка: java.lang.ArithmeticException: / by zero
+MISTAKE. EXCEPTION SAYS: Ошибка: / by zero
+MISTAKE. EXCEPTION SAYS: Ошибка: / by zero
+Thu Nov 27 15:31:15 MSK 2025MISTAKE. EXCEPTION SAYS: Ошибка: / by zero
+Thu Nov 27 15:35:28 MSK 2025MISTAKE. EXCEPTION SAYS: Ошибка: / by zero
+Thu Nov 27 15:35:40 MSK 2025MISTAKE. EXCEPTION SAYS: Ошибка: / by zero
+Thu Nov 27 15:36:08 MSK 2025MISTAKE. EXCEPTION SAYS: Ошибка: / by zero

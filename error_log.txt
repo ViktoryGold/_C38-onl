@@ -1,0 +1,1 @@
+Ошибка: java.lang.ArithmeticException: / by zero
