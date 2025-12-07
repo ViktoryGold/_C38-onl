@@ -22,8 +22,8 @@ public class Terminal implements Serializable {
 
     @Override
     public String toString() {
-        return "Terminal{" +
-                "parameters=" + Arrays.toString(parameters) +
-                ", count=" + count + '}';
+        return "Terminal{\n" +
+                "\tparameters = " + Arrays.toString(parameters) +
+                "\n\tcount = " + count + '}';
     }
 }
