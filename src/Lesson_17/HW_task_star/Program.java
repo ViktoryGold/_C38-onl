@@ -15,3 +15,4 @@ public class Program {
         System.out.println("Текущее значение: " + floatProcessor.value());
     }
 }
+
