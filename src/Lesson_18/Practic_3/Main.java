@@ -2,7 +2,6 @@ package Lesson_18.Practic_3;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Locale;
 
 public class Main {
     public static void main(String[] args) {
